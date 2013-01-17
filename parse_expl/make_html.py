@@ -1,16 +1,15 @@
+import os
+
 encoding = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'
 
-def make_table(title, table):
+template_path = os.path.join(os.path.split(__file__)[0], 'templates')
 
-    html = [encoding, '<table>']
+from genshi.template import TemplateLoader
 
-    html.append('<tr>' + ''.join(['<th>%s</th>'%x for x in title]) + '</tr>')
+loader = TemplateLoader([template_path])
 
-    for line in table:
+def make_result_list_html(annonce_list):
 
-        html.append('<tr>' + ''.join(['<td>%s</td>'%x for x in line]) + '</tr>')
-
-    html.append('</table>')
-
-    return '\n'.join(html)       
-    
+	tmpl = loader.load('annonce_list.html')
+	stream = tmpl.generate(annonce_list=annonce_list)
+	return stream.render()

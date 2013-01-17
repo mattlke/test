@@ -81,11 +81,8 @@ def parse_annonce_in_search_page(annonce_soup):
 
     res.price = a_list[0].string.replace(u'\xa0', ' ')
 
-    #print [res.total]        
     res.nb_pics_str = soup.find_all('div', 'sprEI legende')[0].string
     res.nb_pics = int(res.nb_pics_str.split(' ')[0])
-
-    #print 'nb_photos', [res.nb_photos_str]
 
     bien_soup_list = soup.find_all('div', 'bien')
     assert len(bien_soup_list) == 1
@@ -94,6 +91,7 @@ def parse_annonce_in_search_page(annonce_soup):
     return res
 
 def parse_annonce_own_page(own_url):
+    '''remplit les champs full_title, description, image_src_list'''
 
     res = Obj()
 
@@ -134,8 +132,6 @@ def parse_annonce_own_page(own_url):
     l2 = l[0].find_all('img')
 
     res.image_src_list = [x['src'] for x in l2]
-
-    #print 'img_src_list', res.image_src_list
 
     return res
 
