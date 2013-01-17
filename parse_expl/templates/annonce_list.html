@@ -1,0 +1,26 @@
+
+<html xmlns:py="http://genshi.edgewall.org/">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link href="templates/annonce_list.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<table>
+	<tr>
+		<th>Titre</th>
+		<th>Prix</th>
+		<th>Description</th>
+	</tr>
+	<tr py:for="an in annonce_list">
+		<td class="title"><a href="${an.full_url}">${an.full_title}</a></td>
+		<td class="price">${an.price}</td>
+		<td class="description">${an.description}</td>
+	</tr>
+</table>
+
+</body>
+
+</html>

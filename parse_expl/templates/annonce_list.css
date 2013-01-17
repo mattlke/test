@@ -1,0 +1,19 @@
+
+body {
+	font-size: x-small;
+	font-family: sans-serif;
+	font-weight: lighter;
+	line-height: 17px;
+}
+td.title {
+	width: 200px;
+}
+
+td.price {
+	width: 130px;
+}
+
+td.description {
+	width:500px;
+
+}
