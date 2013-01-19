@@ -21,7 +21,9 @@
         <td class="surface">${an.surface}</td>
         <td class="description">
             <div class="bloc_description">
-                ${an.description}
+                <div class="bloc_description_internal">
+                    ${an.description}
+                </div>
             </div>
         </td>
         <?python
@@ -29,16 +31,25 @@
         n_imgs = len(img_list)
         n_rows = n_imgs / 2
         impair = 2*n_rows < n_imgs
+        moins_de_2_pics = ''
+        if n_imgs <= 2:
+            moins_de_2_pics = ' moins_de_2'
         ?>
         <?python
         def has_second_cell(row_index):
             #res = len(an.image_src_list)
             ii = 2 * row_index + 1
             return ii < n_imgs
+
+        def get_bloc_photos_class():
+            res = 'bloc_photos' 
+            if n_imgs >= 2:
+                return res + ' plus_de_2'
+            return res
         ?>
         <td class="photos">
-            <div class="bloc_photos">
-                <div class="bloc_photos_table" name="${str(n_imgs)}">
+            <div class="${get_bloc_photos_class()}">
+                <div class="bloc_photos_table">
                     <py:for each="row_i in range(n_rows)">
                         <div class="bloc_photos_row">
                             <img class="photo" src="${img_list[2*row_i]}" />

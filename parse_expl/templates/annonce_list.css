@@ -40,35 +40,43 @@ td.description {
 
 div.bloc_photos {
 	width: 430px;
+}
+div.plus_de_2 {
 	height: 320px;
 	overflow-y: auto;
 }
 
-div.bloc_photos_internal {
+div.bloc_photos_table {
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 5px;
-	width: 420px;
-	display: table;
+	margin-top: 8px;
+	width: 410px;
+	display: block;
 }
 
 div.bloc_photos_row {
-	width: 430px;
-	height: 320px;
-	display: table-row;
+	display: block;
+	width: 410px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 img.photo {
-	display: table-cell;
+	display: inline-block;
 	width:200px;
 	max-height:150px;
-	margin-left: auto;
-	margin-right: auto;	
+	/*margin-left: auto;
+	margin-right: auto;	*/
 }
 
 div.bloc_description {
-	height: 310px;
+	height: 200px;
 	width: 240px;
+	overflow-y: auto;
+	display: block;
+}
+
+div.bloc_description_internal {
 	font-size:12px;
 	overflow-y: auto;
 	display: table-cell;
