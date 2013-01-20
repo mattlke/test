@@ -43,10 +43,13 @@ class ExplSearch:
 def main():
 
     annonce_list = parse_expl.parse_html_search_result(open('explorimmo_2.html').read())
+    print 'data parsed, generating'
     html = make_html.make_result_list_html(annonce_list)
     f = open('res.html', 'wb')
     f.write(html)
     f.close()
 
 if __name__ == '__main__':
+
+    
     main()

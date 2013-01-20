@@ -143,6 +143,7 @@ def parse_annonce_full(annonce_soup):
 
     res.full_title = detailed_res.full_title
     res.description = detailed_res.description
+    res.image_src_list = detailed_res.image_src_list
 
     return res
 

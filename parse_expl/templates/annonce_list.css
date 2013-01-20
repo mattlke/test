@@ -12,6 +12,7 @@
 table {
 	border: 1px solid black;
 	border-collapse: collapse;
+	table-layout: fixed;
 }
 
 td, th {
@@ -29,27 +30,60 @@ td.price {
 }
 
 td.surface {
+	width: 80px;
 	text-align: center;
 }
 
 td.description {	
 	width: 240px;
 	padding-left: 5px;
-	padding-right: 5px;
+	vertical-align: middle;
+	overflow-y: auto;
+	margin: 0 0;
+	padding-top: 0px;
 }
+
+div.bloc_description {
+	font-size:12px;
+	box-sizing: border-box;
+	padding: 5px 3px 3px 3px;
+	top: 15px;
+}
+
+div.bloc_description_internal {
+	position: relative;
+	font-size:12px;
+}
+
+div.bloc_description.moins_de_2 {
+	height: 160px;
+	overflow-y: auto;
+}
+
+div.bloc_description.plus_de_2 {
+	height: 320px;
+	overflow-y: auto;
+}
+
 
 div.bloc_photos {
 	width: 430px;
 }
-div.plus_de_2 {
+
+div.bloc_photos.plus_de_2 {
 	height: 320px;
 	overflow-y: auto;
+}
+
+div.bloc_photos.moins_de_2 {
+	height: 160px;
 }
 
 div.bloc_photos_table {
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 8px;
+	margin-top: 7px;
+	margin-bottom: 7px;
 	width: 410px;
 	display: block;
 }
@@ -67,18 +101,4 @@ img.photo {
 	max-height:150px;
 	/*margin-left: auto;
 	margin-right: auto;	*/
-}
-
-div.bloc_description {
-	height: 200px;
-	width: 240px;
-	overflow-y: auto;
-	display: block;
-}
-
-div.bloc_description_internal {
-	font-size:12px;
-	overflow-y: auto;
-	display: table-cell;
-	vertical-align: middle;
 }
